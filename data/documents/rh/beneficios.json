@@ -1,0 +1,38 @@
+{
+  "categoria": "RH",
+  "responsavel": "Ana Beatriz Souza",
+  "ultima_atualizacao": "2025-02-01",
+  "beneficios": [
+    {
+      "nome": "Vale Refeição",
+      "valor_mensal": "R$ 35,00 por dia útil",
+      "operadora": "Alelo",
+      "elegibilidade": "Todos os colaboradores CLT"
+    },
+    {
+      "nome": "Plano de Saúde",
+      "operadora": "Bradesco Saúde",
+      "coparticipacao": "20% em consultas e exames",
+      "elegibilidade": "Após 30 dias de empresa, extensivo a dependentes"
+    },
+    {
+      "nome": "Plano Odontológico",
+      "operadora": "Odontoprev",
+      "elegibilidade": "Após 30 dias de empresa"
+    },
+    {
+      "nome": "Vale Transporte",
+      "valor": "Conforme tarifa municipal",
+      "elegibilidade": "Solicitação obrigatória no ato da admissão"
+    },
+    {
+      "nome": "Auxílio Home Office",
+      "valor_mensal": "R$ 150,00",
+      "elegibilidade": "Colaboradores em regime remoto ou híbrido"
+    },
+    {
+      "nome": "Gympass",
+      "elegibilidade": "Todos os colaboradores, adesão opcional"
+    }
+  ]
+}

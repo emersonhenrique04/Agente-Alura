@@ -1,0 +1,7 @@
+categoria_despesa,limite_mensal,requer_aprovacao_acima_de,observacao
+Alimentação em viagem,R$ 120,00/dia,R$ 150,00/dia,Recibo obrigatório
+Hospedagem,R$ 350,00/diária,R$ 400,00/diária,Preferência por hotéis conveniados
+Transporte urbano (Uber/99),R$ 80,00/dia,R$ 100,00/dia,Apenas em viagens a trabalho
+Material de escritório,R$ 200,00/mês,R$ 300,00/mês,Solicitar via portal de compras
+Cursos e treinamentos,R$ 500,00/mês,R$ 1000,00/mês,Requer aprovação do gestor direto
+Internet e telefonia (home office),R$ 100,00/mês,-,Reembolso automático via folha
