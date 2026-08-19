@@ -1,0 +1,32 @@
+name: Build e Push para OCI Container Registry
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Login no OCI Container Registry (OCIR)
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.OCI_REGION_KEY }}.ocir.io
+          username: ${{ secrets.OCI_TENANCY_NAMESPACE }}/${{ secrets.OCI_USERNAME }}
+          password: ${{ secrets.OCI_AUTH_TOKEN }}
+
+      - name: Build da imagem Docker
+        run: |
+          docker build -t ${{ secrets.OCI_REGION_KEY }}.ocir.io/${{ secrets.OCI_TENANCY_NAMESPACE }}/agente-corporativo:${{ github.sha }} .
+          docker tag ${{ secrets.OCI_REGION_KEY }}.ocir.io/${{ secrets.OCI_TENANCY_NAMESPACE }}/agente-corporativo:${{ github.sha }} ${{ secrets.OCI_REGION_KEY }}.ocir.io/${{ secrets.OCI_TENANCY_NAMESPACE }}/agente-corporativo:latest
+
+      - name: Push da imagem para o OCIR
+        run: |
+          docker push ${{ secrets.OCI_REGION_KEY }}.ocir.io/${{ secrets.OCI_TENANCY_NAMESPACE }}/agente-corporativo:${{ github.sha }}
+          docker push ${{ secrets.OCI_REGION_KEY }}.ocir.io/${{ secrets.OCI_TENANCY_NAMESPACE }}/agente-corporativo:latest
+
+      # Após o push, atualize o Container Instance na OCI (manual ou via OCI CLI)
+      # para usar a nova imagem :latest. Ver docs/DEPLOY.md para o passo a passo.
